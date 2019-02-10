@@ -14,6 +14,18 @@ enum QuestionType: CaseIterable {
     case multiply
 }
 
+struct Question {
+    var left: Int
+    var right: Int
+    var operation: QuestionType
+    
+    init() {
+        left = Int.random(in: 1...12)
+        right = Int.random(in: 1...12)
+        operation = QuestionType.allCases.randomElement()!
+    }
+}
+
 class iMultiply {
     var questionNumber = 1
     var score = 0
