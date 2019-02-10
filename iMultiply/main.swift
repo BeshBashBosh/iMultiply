@@ -53,30 +53,9 @@ class iMultiply {
         print("Welcome to iMultiple!")
         
         repeat {
-            let left = Int.random(in: 1...12)
-            let right = Int.random(in: 1...12)
-            let operation = QuestionType.allCases.randomElement()!
+            let question = Question()
             
-            let question: String
-            
-            switch operation {
-            case .add:
-                question = "What is \(left) plus \(right)?"
-            case .subtract:
-                question = "What is \(left) minus \(right)?"
-            case .multiply:
-                question = "What is \(left) multiplied by \(right)?"
-            }
-            
-            let correctAnswer: Int
-            
-            switch operation {
-            case .add: correctAnswer = left + right
-            case .subtract: correctAnswer = left - right
-            case .multiply: correctAnswer = left * right
-            }
-            
-            print("\n\(questionNumber). \(question)")
+            print("\n\(questionNumber). \(question.string)")
             print("Your answer: ", terminator: "")
             
             if let answer = readLine() {
@@ -87,7 +66,7 @@ class iMultiply {
                 
                 questionNumber += 1
                 
-                if answerInt == correctAnswer {
+                if answerInt == question.answer {
                     score += 1
                     print("Correct")
                 } else {
