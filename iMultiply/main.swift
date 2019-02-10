@@ -79,9 +79,9 @@ class iMultiply {
                 print(response)
             }
             
-        } while questionNumber < 10
+        } while questionNumber <= 10
         
-        print("\nYou score \(score).")
+        print("\nYou're score \(score).")
     }
 }
 

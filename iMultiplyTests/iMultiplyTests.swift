@@ -61,5 +61,14 @@ class iMultiplyTests: XCTestCase {
         _ = game.process("10", for: question)
         XCTAssertEqual(game.questionNumber, 2)
     }
+    
+    func testGameCompletesAt11thQuestion() {
+        let game = iMultiply()
+        game.answerFunction = { return "556" }
+        game.start()
+        
+        XCTAssertEqual(game.questionNumber, 11)
+        XCTAssertEqual(game.score, 0)
+    }
 
 }
