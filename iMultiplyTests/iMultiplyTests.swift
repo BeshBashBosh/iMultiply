@@ -29,11 +29,7 @@ class iMultiplyTests: XCTestCase {
     }
     
     func testQuestionStringIsFormattedCorrectly() {
-        var question = Question()
-        question.left = 5
-        question.right = 5
-        question.operation = .multiply
-        
+        let question = Question(left: 5, right: 5, operation: .multiply)        
         XCTAssertEqual(question.string, "What is 5 multiplied by 5?")
     }
 

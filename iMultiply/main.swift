@@ -19,18 +19,20 @@ struct Question {
     var right: Int
     var operation: QuestionType
     
-    init() {
-        left = Int.random(in: 1...12)
-        right = Int.random(in: 1...12)
-        operation = QuestionType.allCases.randomElement()!
-    }
-    
     var string: String {
         switch operation {
         case .add: return "What is \(left) plus \(right)?"
         case .subtract: return "What is \(left) minus \(right)?"
         case .multiply: return "What is \(left) multiplied by \(right)?"
         }
+    }
+}
+
+extension Question {
+    init() {
+        left = Int.random(in: 1...12)
+        right = Int.random(in: 1...12)
+        operation = QuestionType.allCases.randomElement()!
     }
 }
 
