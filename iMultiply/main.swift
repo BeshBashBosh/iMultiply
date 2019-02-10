@@ -24,6 +24,14 @@ struct Question {
         right = Int.random(in: 1...12)
         operation = QuestionType.allCases.randomElement()!
     }
+    
+    var string: String {
+        switch operation {
+        case .add: return "What is \(left) plus \(right)?"
+        case .subtract: return "What is \(left) minus \(right)?"
+        case .multiply: return "What is \(left) multiplied by \(right)?"
+        }
+    }
 }
 
 class iMultiply {

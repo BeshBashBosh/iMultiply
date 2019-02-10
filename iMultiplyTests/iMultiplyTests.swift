@@ -27,12 +27,14 @@ class iMultiplyTests: XCTestCase {
         XCTAssertLessThanOrEqual(question.right, 12)
         XCTAssertLessThanOrEqual(question.right, 12)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testQuestionStringIsFormattedCorrectly() {
+        var question = Question()
+        question.left = 5
+        question.right = 5
+        question.operation = .multiply
+        
+        XCTAssertEqual(question.string, "What is 5 multiplied by 5?")
     }
 
 }
