@@ -8,4 +8,26 @@
 
 import Foundation
 
+enum QuestionType {
+    case add
+    case subtract
+    case multiply
+}
 
+class iMultiply {
+    var questionNumber = 1
+    var score = 0
+    
+    func start() {
+        print("Welcome to iMultiple!")
+        
+        repeat {
+            
+        } while questionNumber < 10
+        
+        print("\nYou score \(score).")
+    }
+}
+
+let game = iMultiple()
+game.start()
