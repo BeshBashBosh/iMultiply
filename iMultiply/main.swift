@@ -26,6 +26,15 @@ struct Question {
         case .multiply: return "What is \(left) multiplied by \(right)?"
         }
     }
+    
+    var answer: Int {
+        switch operation {
+        case .add: return left + right
+        case .subtract: return left - right
+        case .multiply: return left * right
+        }
+    }
+    
 }
 
 extension Question {
