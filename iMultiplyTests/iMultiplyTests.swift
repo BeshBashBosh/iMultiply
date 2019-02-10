@@ -47,5 +47,19 @@ class iMultiplyTests: XCTestCase {
         let question = Question(left: 5, right: 5, operation: .multiply)
         XCTAssertEqual(question.answer, 25)
     }
+    
+    func testStringInputWorks() {
+        let question = Question(left: 5, right: 5, operation: .add)
+        let game = iMultiply()
+        result = game.process("10", for: question)
+        XCTAssertEqual(result, "Correct!")
+    }
+    
+    func testAnswerinfQuestionIncrementsCounter() {
+        let question = Question(left: 5, right: 5, operation: .add)
+        let game = iMultiply()
+        _ = game.process("10", for: question)
+        XCTAssertEqual(game.questionNumber, 2)
+    }
 
 }
