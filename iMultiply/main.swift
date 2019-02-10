@@ -48,6 +48,7 @@ extension Question {
 class iMultiply {
     var questionNumber = 1
     var score = 0
+    var answerFunction = { readLine() }
     
     func process(_ answer: String, for question: Question) -> String {
         guard let answerInt = Int(answer) else {
@@ -73,7 +74,7 @@ class iMultiply {
             print("\n\(questionNumber). \(question.string)")
             print("Your answer: ", terminator: "")
             
-            if let answer = readLine() {
+            if let answer = answerFunction() {
                 let response = process(answer, for: question)
                 print(response)
             }
