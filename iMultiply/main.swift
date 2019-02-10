@@ -49,6 +49,21 @@ class iMultiply {
     var questionNumber = 1
     var score = 0
     
+    func process(_ answer: String, for question: Question) -> String {
+        guard let answerInt = Int(answer) else {
+            return "Error"
+        }
+        
+        questionNumber += 1
+        
+        if answerInt == question.answer {
+            score += 1
+            return "Correct"
+        } else {
+            return "Wrong!"
+        }
+    }
+    
     func start() {
         print("Welcome to iMultiple!")
         
@@ -59,19 +74,8 @@ class iMultiply {
             print("Your answer: ", terminator: "")
             
             if let answer = readLine() {
-                guard let answerInt = Int(answer) else {
-                    print("Error")
-                    continue
-                }
-                
-                questionNumber += 1
-                
-                if answerInt == question.answer {
-                    score += 1
-                    print("Correct")
-                } else {
-                    print("Wrong!")
-                }
+                let response = process(answer, for: question)
+                print(response)
             }
             
         } while questionNumber < 10
