@@ -29,5 +29,5 @@ class iMultiply {
     }
 }
 
-let game = iMultiple()
+let game = iMultiply()
 game.start()
