@@ -32,5 +32,20 @@ class iMultiplyTests: XCTestCase {
         let question = Question(left: 5, right: 5, operation: .multiply)        
         XCTAssertEqual(question.string, "What is 5 multiplied by 5?")
     }
+    
+    func testAddingWorks() {
+        let question = Question(left: 5, right: 5, operation: .add)
+        XCTAssertEqual(question.answer, 10)
+    }
+    
+    func testSubtractionWorks() {
+        let question = Question(left: 5, right: 5, operation: .subtract)
+        XCTAssertEqual(question.answer, 0)
+    }
+    
+    func testMultiplyWorks() {
+        let question = Question(left: 5, right: 5, operation: .multiply)
+        XCTAssertEqual(question.answer, 25)
+    }
 
 }
