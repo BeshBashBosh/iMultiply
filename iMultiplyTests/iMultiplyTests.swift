@@ -51,8 +51,8 @@ class iMultiplyTests: XCTestCase {
     func testStringInputWorks() {
         let question = Question(left: 5, right: 5, operation: .add)
         let game = iMultiply()
-        result = game.process("10", for: question)
-        XCTAssertEqual(result, "Correct!")
+        let response = game.process("10", for: question)
+        XCTAssertEqual(response, "Correct")
     }
     
     func testAnswerinfQuestionIncrementsCounter() {
